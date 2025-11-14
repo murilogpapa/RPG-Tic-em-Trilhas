@@ -30,10 +30,10 @@ enemy1["danoMin"] = 1
 enemy1["danoMax"] = 4
 
 var enemy2 = [String: Int]()
-enemy2["vida"] = 10
-enemy2["maxvida"] = 10
-enemy2["danoMin"] = 2
-enemy2["danoMax"] = 5
+enemy2["vida"] = 18
+enemy2["maxvida"] = 18
+enemy2["danoMin"] = 4
+enemy2["danoMax"] = 7
 
 let place: [String: String] = [
     "floresta": "enemy1",
@@ -89,7 +89,7 @@ func batalha(inimigoNome: String, enemyBase: [String: Int]) -> Bool {
             
         case "3":
             let chance = Int.random(in: 1...100)
-            if chance <= 50 {
+            if chance <= 25 {
                 print("\nVocê conseguiu fugir da batalha!")
                 break batalhaLoop
             } else {
