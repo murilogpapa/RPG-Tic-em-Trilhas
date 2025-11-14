@@ -127,6 +127,17 @@ func subirDeNivel() {
     player["maxvida"] = (player["maxvida"] ?? 10) + 3
     player["dano"] = (player["dano"] ?? 3) + 1
     player["vida"] = player["maxvida"]
+    
+    enemy1["vida"] = enemy1["maxvida"]
+    enemy1["maxvida"] = (enemy1["maxvida"] ?? 12) + 2
+    enemy1["danoMin"] = (enemy1["danoMin"] ?? 1) + 1
+    enemy1["danoMax"] = (enemy1["danoMax"] ?? 4) + 2
+    
+    enemy2["vida"] = enemy2["maxvida"]
+    enemy2["maxvida"] = (enemy2["maxvida"] ?? 18) + 1
+    enemy2["danoMin"] = (enemy2["danoMin"] ?? 4) + 1
+    enemy2["danoMax"] = (enemy2["danoMax"] ?? 7) + 1
+    
     print("\n===== LEVEL UP! =====")
     print("Você subiu para o nível \(player["lvl"] ?? 1)!")
     print("Sua vida máxima agora é \(player["maxvida"] ?? 0) e seu dano base é \(player["dano"] ?? 0).")
@@ -167,7 +178,7 @@ while jogoAtivo && (player["vida"] ?? 0) > 0 {
         esperarEnter()
         
     case "3":
-        print("\nVocê descansa na fogueira. Sua vida é restaurada.")
+        print("\nVocê descansa na fogueira. Sua vida é restaurada ao maximo.")
         player["vida"] = player["maxvida"]
         esperarEnter()
         
